@@ -1,0 +1,22 @@
+---
+const {date} = Astro.props;
+
+const currentDate = new Date();
+const targetDate = new Date(Date.parse(date));
+
+let options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+};
+
+// if (currentDate.getFullYear() === targetDate.getFullYear()) {
+//     delete options['year'];
+// }
+
+const formattedDate = new Intl.DateTimeFormat('en-US', options).format(Date.parse(date))
+---
+<time datetime={date}>{formattedDate}</time>

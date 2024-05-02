@@ -1,0 +1,80 @@
+---
+import ThemeIcon from './ThemeIcon.astro';
+---
+<div class="top">
+	<div class="logo container">
+		<a href="/">Simon's Blog</a>
+		<ThemeIcon />
+	</div>
+	<!--<div class="nav-links">
+		<a href="/">Index</a>
+		<a href="/about/">About</a>
+		<a href="/blog/">Blog</a>
+		<a href="/tags/">Tags</a>
+	</div>-->
+</div>
+
+<style>
+	.top {
+		background-color: var( --background-color-alt );
+		margin-bottom: 20px;
+	}
+
+	.logo { 
+		padding: 60px 0;
+		display: flex;
+	}
+	
+	a {
+		font-size: 1.4rem;
+		font-weight: bold;
+		color: var( --text-color-alt );
+		text-decoration: none;
+	}
+
+
+
+	/*.nav-links {
+		width: 100%;
+		top: 5rem;
+		left: 48px;
+		background-color: #ff9776;
+		display: none;
+		margin: 0;
+	}
+
+	.nav-links a {
+		display: block;
+		text-align: center;
+		padding: 10px 0;
+		text-decoration: none;
+		font-size: 1.2rem;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	.nav-links a:hover,
+	.nav-links a:focus {
+		background-color: #ff9776;
+	}
+
+	@media screen and (min-width: 636px) {
+		.nav-links {
+			margin-left: 5em;
+			display: block;
+			position: static;
+			width: auto;
+			background: none;
+		}
+
+		.nav-links a {
+			display: inline-block;
+			padding: 15px 20px;
+		}
+
+		.hamburger {
+			display: none;
+		}
+
+	}*/
+</style>

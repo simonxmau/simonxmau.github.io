@@ -1,0 +1,24 @@
+---
+import { SITE } from "@config";
+---
+<div class="bottom">
+	<!--© {(new Date()).getFullYear()} <a href="/">{SITE.title}<a/> Powered by <a href="https://astro.build/">Astro</a> & <a href="https://github.com/OnWritingCode/simple-blog-template">Simple Blog Theme</a>-->
+	<!--&copy; {SITE.title} {(new Date()).getFullYear()}-->
+	Copyright © {(new Date()).getFullYear()}	| All rights reserved.
+</div>
+
+<style>
+	.bottom {
+		background-color: var( --background-color-alt );
+		padding: 20px 5vw;
+		text-align: center;
+		font-size: .85rem;
+		margin-top: auto;
+
+		a {
+			//font-weight: bold;
+			color: var( --text-color-alt );
+			text-decoration: underline;
+		}
+	}
+</style>

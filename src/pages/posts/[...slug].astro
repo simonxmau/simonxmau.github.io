@@ -1,0 +1,72 @@
+---
+import  {CollectionEntry,getCollection} from "astro:content";
+import Layout from '@layouts/Layout';
+import getPageNumbers from "@utils/getPageNumbers";
+import Date from "@components/Date";
+
+export interface Props {
+    post: CollectionEntry<"blog">;
+}
+
+export async function getStaticPaths() {
+    // const posts = await getCollection("blog", ({data}) => !data.draft);
+    const posts = await getCollection("blog");
+
+    const post = posts.map(post => ({
+        params: {slug: post.slug},
+        props: {post},
+    }));
+
+    // const pagePaths = getPageNumbers(posts.length).map(pageNum => ({
+    //     params: {slug: String(pageNum)},
+    // }));
+
+    return post;
+    // return [...postResult, ...pagePaths];
+}
+
+// const { slut } = Astro.params;
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+<Layout title={post.data.title}>
+    <div class="post-header container">
+        <h1 class="post-title">{post.data.title}</h1>
+        <div class="post-date">
+            <Date date={post.data.createtime}/>
+        </div>
+    </div>
+    <div class="content container">
+        <Content />
+        <div class="tags">
+            {post.data.tags && post.data.tags.map((tag) => (
+                    <p class="tag"><a href={`/tags/${tag}`}>#{tag}</a></p>
+            ))}
+        </div>
+    </div>
+</Layout>
+
+
+<style>
+    .post-header {
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+    .post-date {
+        font-size: 0.75rem;
+    }
+
+    .content {
+        margin-bottom: 40px;
+    }
+
+    .tags {
+        margin-top: 50px;;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        margin: 0.25em;
+    }
+</style>

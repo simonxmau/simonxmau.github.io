@@ -1,0 +1,47 @@
+@use "reset";
+@use "variables";
+@use "layout";
+@use "content";
+
+html {
+	font-size: 112.5%;
+}
+
+html.dark {
+	--background-color: #0d0950;
+	--background-color-alt: #0d0996;
+	--text-color: #e6e6e6;
+	--text-color-alt: #e6e6e6;
+
+	.logo {
+		a {
+			color: #fff;
+		}
+	}
+	.bottom {
+		a {
+			color: #fff;
+		}
+	}
+}
+
+.dark .nav-links a {
+	color: #fff;
+}
+
+body {
+	line-height: 1.6;
+	tab-size: 4;
+	font-weight: 400;
+	font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+	background: var( --background-color );
+	color: var( --text-color );
+}	
+
+a {
+	color: hsl(188 74% 50%);
+
+	&:hover, &:focus {
+		color: hsl(188 74% 70%);
+	}
+}
