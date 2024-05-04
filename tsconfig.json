@@ -4,13 +4,17 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": [
-        "components/*.astro"
+        "components/*.astro",
+//        "components/*"
       ],
       "@layouts/*": [
         "layouts/*.astro"
       ],
       "@utils/*": [
         "utils/*.ts"
+      ],
+      "@style/*": [
+        "style/*"
       ],
       "@config": [
         "config.ts"

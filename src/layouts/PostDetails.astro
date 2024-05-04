@@ -1,0 +1,26 @@
+---
+import {CollectionEntry} from "astro:content";
+import Date from "@components/Date";
+
+export interface Props {
+    post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<div class="main-header">
+    <h1 class="main-title">{post.data.title}</h1>
+    <div class="post-date">
+        <Date date={post.data.createtime}/>
+    </div>
+</div>
+<article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl w-full">
+    <Content />
+</article>
+<div class="tags">
+    {post.data.tags && post.data.tags.map((tag) => (
+            <p class="tag"><a href={`/tags/${tag}`}>#{tag}</a></p>
+    ))}
+</div>

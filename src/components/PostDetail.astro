@@ -21,8 +21,6 @@ const {
 
 const { Content } = await post.render();
 ---
-
-<div>
-    <h2><a href={`/posts/${post.slug}`}>{post.data.title}</a></h2>
-    <p>{post.data.preview}</p>
-</div>
+<article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl">
+    <Content />
+</article>

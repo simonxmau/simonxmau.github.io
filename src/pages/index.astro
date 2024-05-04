@@ -1,7 +1,10 @@
 ---
 import {SITE} from "@config";
 import Layout from '@layouts/Layout';
-import Preview from '@components/Preview';
+import Header from "@components/Header";
+import Footer from "@components/Footer";
+import Main from '@layouts/Main';
+import PostPreview from '@components/PostPreview';
 
 import { getCollection, getEntry } from 'astro:content';
 import getSortedPosts from "../utils/getSortedPosts";
@@ -10,7 +13,9 @@ const sortedPosts = getSortedPosts(posts);
 ---
 
 <Layout title={SITE.title}>
-	<div class="content container">
-		{sortedPosts.map((p) => <Preview post={p} />)}
-	</div>
+	<Header />
+	<Main>
+		{sortedPosts.map((p) => <PostPreview post={p} />)}
+	</Main>
+	<Footer />
 </Layout>
