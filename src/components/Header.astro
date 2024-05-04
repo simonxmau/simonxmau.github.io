@@ -1,9 +1,15 @@
 ---
 import ThemeIcon from './ThemeIcon.astro';
+import Navigation from "./Navigation.astro";
 ---
 <header>
-    <div class="logo">
-        <a href="/">Simon's Blog</a>
-        <!--<ThemeIcon />-->
+    <div class="header-container flex flex-wrap py-16">
+        <div class="logo">
+            <a href="/" class="title">
+                Simon's Blog
+                <!--<ThemeIcon />-->
+            </a>
+        </div>
+        <Navigation />
     </div>
 </header>
