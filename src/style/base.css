@@ -35,7 +35,7 @@
         --text-color: hsl(188 5% 27%);
         --text-color-alt: hsl(188 12% 24%);
 
-        /*font-size: 112.5%;*/
+        font-size: 112.5%;
     }
 
     html.dark {
@@ -60,7 +60,7 @@
     }
     /*section,*/
     footer {
-        /*@apply mx-auto max-w-3xl px-4;*/
+        /*@apply mx-auto max-w-2xl px-4;*/
     }
 
     a {
@@ -123,7 +123,7 @@ h1 {
     @apply text-3xl font-semibold tracking-wide mt-9 mb-2;
 }
 h2 {
-    @apply text-2xl font-semibold tracking-wide mt-9 mb-2;
+    @apply text-2xl font-bold tracking-wide mt-9 mb-2;
 }
 
 /*p {
@@ -180,7 +180,7 @@ header {
 
 
     .header-container {
-        @apply mx-auto max-w-3xl px-5 flex items-center justify-between;
+        @apply mx-auto max-w-2xl px-5 flex items-center justify-between;
 
         .logo {
             /*@apply w-full;*/
@@ -283,7 +283,7 @@ main {
     /*@apply mx-auto max-w-2xl min-w-52;*/
     /*@apply mx-auto max-w-screen-sm px-5;*/
     /*@apply mx-auto max-w-2xl pb-10 pt-4;*/
-    @apply mx-auto w-full max-w-3xl pb-14 pt-10 px-5;
+    @apply mx-auto w-full max-w-2xl pb-14 pt-10 px-5;
     color: var( --text-color-alt );
 }
 

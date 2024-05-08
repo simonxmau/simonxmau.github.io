@@ -5,7 +5,7 @@ const post: Post = Astro.props.post
 ---
 <div class="post-preview-container mb-10">
     <h2 class="mb-4"><a href={`/posts/${post.slug}`}>{post.data.title}</a></h2>
-    <p class="mb-2">{post.data.preview}</p>
+    <p class="mb-2">{post.data.description}</p>
     <div class="post-date mb-12">
         <Date date={post.data.createtime}/>
     </div>
